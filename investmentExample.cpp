@@ -5,17 +5,12 @@
 using namespace std;
 
 void input (double& invest, double& rate, double& term);
-
 void process (double invest, double rate, double term, double& multiplier, double& futureValue);
-
 void output (double invest, double rate, double term, double multiplier, double futureValue);
 
 double getInput (string message);
-
-double findMultiplier (double rate, double period);
-
+double findMultiplier (double rate, double term);
 void printData (double invest, double rate, double term);
-
 void printResult (double multiplier, double value);
 
 int main()
