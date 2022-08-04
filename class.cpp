@@ -5,45 +5,58 @@ class Circle{
     private:
         double radius;
     public:
-        double getRadius() const;
-        double getArea() const;
-        double getPerimeter() const;
-        void setRadius(double value);
+        double getRadius();
+        void setRadius(double r);
+        double getPerimeter();
+        double getArea();
 };
 
-double Circle::getRadius()const{
+void Circle::setRadius(double r){
+    radius = r;
+}
+double Circle::getRadius(){
+    cout <<"hi"<<endl;
     return radius;
 }
 
-double Circle::getArea()const{
+double Circle::getPerimeter(){
     const double PI = 3.14;
-    return (PI*radius*radius);
+    return 2*PI*radius;
 }
 
-double Circle::getPerimeter()const{
+double Circle::getArea(){
     const double PI = 3.14;
-    return (2*PI*radius);
-}
-
-void Circle::setRadius(double value){
-    radius = value;
+    return PI*radius*radius;
 }
 
 int main(){
 
-    cout << "Circle 1: " << endl;
-    Circle circle1;
-    circle1.setRadius(10.0);
-    cout << "Radius: " << circle1.getRadius() << endl;
-    cout << "Area: " << circle1.getArea() << endl;
-    cout << "Perimeter: " << circle1.getPerimeter() << endl << endl;
+    Circle circle1,circle2;
+    double rad1,rad2;
 
-    cout << "Circle 2: " << endl;
-    Circle circle2;
-    circle2.setRadius(15.0);
-    cout << "Radius: " << circle2.getRadius() << endl;
-    cout << "Area: " << circle2.getArea() << endl;
-    cout << "Perimeter: " << circle2.getPerimeter() << endl << endl;
+    cout << "Please enter radius 1: " << endl;
+    cin >> rad1;
+
+    circle1.setRadius(rad1);
+
+    cout << "Please enter radius 2: " << endl;
+    cin >> rad2;
+
+    circle2.setRadius(rad2);
+
+    cout << "Circle 1" << endl;
+    cout << "radius:" << circle1.getRadius() << endl;
+    cout << "area:" << circle1.getArea() << endl;
+    cout << "perimeter:" << circle1.getPerimeter() << endl;
+
+    cout << endl << endl;
+
+    cout << "Circle 2" << endl;
+    cout << "radius:" << circle2.getRadius() << endl;
+    cout << "area:" << circle2.getArea() << endl;
+    cout << "perimeter:" << circle2.getPerimeter() << endl;
+
+
 
     return 0;
 }
